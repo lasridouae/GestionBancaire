@@ -24,8 +24,7 @@
         </div>
 
         <ul class="navbar-nav">
-            <li><a href="<a href="<%=request.getContextPath()%>/list" class="nav-link">Personne</a></li>
-            <li><a href="<a href="<%=request.getContextPath()%>/entrepriseAffich.jsp" class="nav-link">Entreprise</a></li>
+            <li><a href="<%=request.getContextPath()%>/list" class="nav-link">Clients</a></li>
             <li><a href="Entreprise.jsp" class="nav-link">Add Entreprise</a></li>
             <li><a href="Personne.jsp"  class="nav-link">Add Personne</a></li>
         </ul>
@@ -38,12 +37,6 @@
 
     <div class="container">
         <h3 class="text-center">List of Clients</h3>
-        <hr>
-        <div class="container text-left">
-
-            <a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
-                New User</a>
-        </div>
         <br>
         <table class="table table-bordered">
             <thead>
@@ -57,17 +50,17 @@
             </tr>
             </thead>
             <tbody>
-            <!--   for (Todo todo: todos) {  -->
-            <c:forEach var="personne" items="${requestScope.listClient}">
+<!--   for (Todo todo: todos) {  -->
+     <c:forEach var="personne" items="${listClient}">
             <tr>
-                   <td><c:out value="${requestScope.personne.id_user}"/></td>
-                    <td><c:out value="${requestScope.personne.nom}"/></td>
-                    <td><c:out value="${requestScope.personne.prenom}"/></td>
-                    <td><c:out value="${requestScope.personne.n_compte}"/></td>
-                    <td><c:out value="${requestScope.personne.solde}"/></td>
-                    <td><a class="btn btn-warning" href="edit?id=<c:out value='${requestScope.personne.id_user}'/>">Modifier</a>
+                   <td><c:out value="${personne.getId_user()}"/></td>
+                    <td><c:out value="${personne.getNom()}"/></td>
+                    <td><c:out value="${personne.getPrenom()}"/></td>
+                    <td><c:out value="${personne.getN_compte()}"/></td>
+                    <td><c:out value="${personne.getSolde()}"/></td>
+                    <td><a class="btn btn-warning" href="edit?id=<c:out value='${personne.id_user}'/>">Modifier</a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-danger" href="supprimer?id=<c:out value='${requestScope.personne.id_user}'/>">Supprimer</a>
+                        <a class="btn btn-danger" href="supprimer?id=<c:out value='${personne.getId_user()}'/>">Supprimer</a>
                     </td>
                 </tr>
         </c:forEach>

@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<!-- Load an icon library -->
+<!-- Load an icon library-->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -24,7 +24,6 @@
 
         <ul class="navbar-nav">
             <li><a href="<a href="<%=request.getContextPath()%>/list" class="nav-link">Personne</a></li>
-            <li><a href="<a href="<%=request.getContextPath()%>//list" class="nav-link">Personne</a></li>
             <li><a href="Personne.jsp"  class="nav-link">Add Personne</a></li>
         </ul>
     </nav>

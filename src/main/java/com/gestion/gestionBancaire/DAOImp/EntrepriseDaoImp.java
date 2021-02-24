@@ -1,9 +1,10 @@
- package com.gestion.gestionBancaire.DAOImp;
+package com.gestion.gestionBancaire.DAOImp;
 
 
 import com.gestion.gestionBancaire.DAO.EntrepriseDao;
 import com.gestion.gestionBancaire.DBconn.GetConnection;
 import com.gestion.gestionBancaire.Model.Entreprise;
+import com.gestion.gestionBancaire.Model.Personne;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -70,16 +71,17 @@ public class EntrepriseDaoImp  implements EntrepriseDao {
     }
 
 
+
+
     @Override
     public boolean update(Entreprise entreprise) throws SQLException {
         Connection conn = null;
-        String requete = "UPDATE public.entreprise SET nom=?, solde=?, n_compte=? WHERE id=?";
+        String requete = "UPDATE public.entreprise SET  nom=?, solde=?, n_compte=? WHERE id=?";
         PreparedStatement stmt = Objects.requireNonNull(GetConnection.connect()).prepareStatement(requete);
-
+        stmt.setInt(4, entreprise.getId_user());
         stmt.setString(1, entreprise.getNom());
         stmt.setDouble(2, entreprise.getSolde());
         stmt.setLong(3, entreprise.getN_compte());
-        stmt.setInt(4, entreprise.getId_user());
         boolean rowUpdated = stmt.executeUpdate() > 0;
         stmt.close();
         return rowUpdated;
@@ -103,7 +105,28 @@ public class EntrepriseDaoImp  implements EntrepriseDao {
     }
 
     @Override
-    public Entreprise getClient(int id_user) {
+    public Entreprise getClient(int id) {
+        Connection conn = null;
+        try {
+            String requete = "SELECT id, nom, solde, n_compte, prenom FROM public.client where id = ?;";
+            PreparedStatement stmt = Objects.requireNonNull(GetConnection.connect()).prepareStatement(requete);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            Entreprise entreprise;
+            entreprise = new Entreprise(rs.getInt("id"), rs.getString("nom"), rs.getDouble("solde"), rs.getLong("n_compte"));
+            return entreprise;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return null;
     }
 }

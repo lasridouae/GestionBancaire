@@ -14,7 +14,6 @@ import java.util.List;
 
 @WebServlet("/")
 public class PersonneServlet extends HttpServlet {
-
     private PersonneDao personneDaoImp = new PersonneDaoImp();
 
     @Override
@@ -24,15 +23,11 @@ public class PersonneServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getServletPath();
-
+        System.out.println(action);
         try {
             switch (action) {
-                case "/new":
-                    showNewForm(request, response);
-                    break;
                 case "/ajouter":
                     ajouter(request, response);
-                    System.out.println("Bien ajouter !");
                     break;
                 case "/supprimer":
                     supprimer(request, response);
@@ -42,7 +37,6 @@ public class PersonneServlet extends HttpServlet {
                     break;
                 case "/modifier":
                     modifier(request, response);
-                    System.out.println("Bien modifier !");
                     break;
                 default:
                     listClients(request, response);
@@ -51,11 +45,15 @@ public class PersonneServlet extends HttpServlet {
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
+
+
     }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         int id_user = Integer.parseInt(request.getParameter("id"));
         Personne existingClients = personneDaoImp.getClient(id_user);
+        System.out.println("the client is not null:");
+        System.out.println(existingClients != null);
         RequestDispatcher dispatcher = request.getRequestDispatcher("Personne.jsp");
         request.setAttribute("personne", existingClients);
         dispatcher.forward(request, response);
@@ -64,8 +62,9 @@ public class PersonneServlet extends HttpServlet {
     private void listClients(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         List<Personne> listClient = personneDaoImp.listAllClients();
         request.setAttribute("listClient", listClient);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("list");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("Affichage.jsp");
         dispatcher.forward(request, response);
+        //response.sendRedirect("Affichage.jsp");
     }
 
 
@@ -77,6 +76,7 @@ public class PersonneServlet extends HttpServlet {
         double solde = Double.parseDouble(request.getParameter("solde"));
         Personne personne = new Personne(id_user,nom,prenom,solde,n_compte);
         personneDaoImp.modifier(personne);
+        System.out.println("nom personne"+personne.getNom());
         response.sendRedirect("list");
 
 
@@ -90,6 +90,7 @@ public class PersonneServlet extends HttpServlet {
     }
 
 
+
     private void ajouter(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
@@ -101,11 +102,6 @@ public class PersonneServlet extends HttpServlet {
         personneDaoImp.ajouter(personne);
         response.sendRedirect("list");
 
-    }
-    private void showNewForm(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-        dispatcher.forward(request, response);
     }
 
 }

@@ -15,16 +15,14 @@ public class PersonneDaoImp  implements PersonneDao {
 
     @Override
     public void ajouter(Personne personne) throws SQLException {
-        System.out.println("this is what you're looking for");
-        System.out.println(personne.getPrenom());
         Connection conn = null;
         try {
             String requete = "INSERT INTO public.client(nom, solde, n_compte, prenom) VALUES (?, ?, ?, ?);";
             PreparedStatement stmt = Objects.requireNonNull(GetConnection.connect()).prepareStatement(requete);
-            stmt.setString(1, personne.getPrenom());
+            stmt.setString(4, personne.getPrenom());
             stmt.setDouble(2, personne.getSolde());
             stmt.setLong(3, personne.getN_compte());
-            stmt.setString(4, personne.getNom());
+            stmt.setString(1, personne.getNom());
             stmt.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -69,13 +67,13 @@ public class PersonneDaoImp  implements PersonneDao {
     @Override
     public boolean modifier(Personne personne) throws SQLException {
         Connection conn = null;
-            String requete = "UPDATE public.client SET nom=?, solde=?, n_compte=?, prenom=? WHERE  id=?";
+            String requete = "UPDATE public.client SET  nom=?, solde=?, n_compte=?, prenom=? WHERE id=?";
             PreparedStatement stmt = Objects.requireNonNull(GetConnection.connect()).prepareStatement(requete);
             stmt.setString(1, personne.getNom());
-            stmt.setString(2, personne.getPrenom());
-            stmt.setDouble(3, personne.getSolde());
-            stmt.setLong(4, personne.getN_compte());
-            stmt.setInt(5, personne.getId_user());
+            stmt.setString(4, personne.getPrenom());
+            stmt.setDouble(2, personne.getSolde());
+            stmt.setLong(3, personne.getN_compte());
+        stmt.setInt(5, personne.getId_user());
             boolean rowUpdated = stmt.executeUpdate() > 0;
             stmt.close();
             return rowUpdated;
@@ -83,7 +81,28 @@ public class PersonneDaoImp  implements PersonneDao {
 
     @Override
     public Personne getClient(int id) throws SQLException {
-        return null;
+            Connection conn = null;
+            try {
+                String requete = "SELECT id, nom, solde, n_compte, prenom FROM public.client where id = ?;";
+                PreparedStatement stmt = Objects.requireNonNull(GetConnection.connect()).prepareStatement(requete);
+                stmt.setInt(1, id);
+                ResultSet rs = stmt.executeQuery();
+                rs.next();
+                Personne personne;
+                personne = new Personne(rs.getInt("id"), rs.getString("nom"), rs.getDouble("solde"), rs.getLong("n_compte"), rs.getString("prenom"));
+                return personne;
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            } finally {
+                try {
+                    if (conn != null) {
+                        conn.close();
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
     }
 
     @Override

@@ -1,6 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Gestion Bancaire </title>
@@ -22,9 +21,7 @@
         </div>
 
         <ul class="navbar-nav">
-            <li><a href="<a href="<%=request.getContextPath()%>/list" class="nav-link">Personne</a></li>
-            <li><a href="Entreprise.jsp" class="nav-link">Add Entreprise</a></li>
-            <li><a href="Personne.jsp"  class="nav-link">Add Personne</a></li>
+            <li><li><a href="<%=request.getContextPath()%>/list" class="nav-link">Personne</a></li>
         </ul>
     </nav>
 </header>
@@ -36,6 +33,7 @@
             <form action="modifier" method="post">
                 </c:if>
                 <c:if test="${personne == null}">
+                    <!-- changer ajouter au modifier -->
                 <form action="ajouter" method="post">
                     </c:if>
                     <caption>
@@ -44,6 +42,7 @@
                                 Edit Client
                             </c:if>
                             <c:if test="${personne == null}">
+                                <!-- change to edit client -->
                                 Add New Client
                             </c:if>
                         </h2>
@@ -65,7 +64,7 @@
                         <label>Soldes</label> <input type="text" value="<c:out value='${personne.solde}' />" class="form-control" name="solde">
                     </fieldset>
                     <button type="submit" class="btn btn-success">Save</button>
-                </form>
+            </form>
         </div>
     </div>
 </div>

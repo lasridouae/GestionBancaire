@@ -9,7 +9,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddefcc89-8a63-4619-8b3b-9d33d6b4c90f" name="Default Changelist" comment="" />
+    <list default="true" id="ddefcc89-8a63-4619-8b3b-9d33d6b4c90f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bde90a0c-4b23-47c1-9aaf-6cbc8d81b7d3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bde90a0c-4b23-47c1-9aaf-6cbc8d81b7d3.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bde90a0c-4b23-47c1-9aaf-6cbc8d81b7d3/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bde90a0c-4b23-47c1-9aaf-6cbc8d81b7d3/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Controller/EntrepriseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Controller/EntrepriseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Controller/PersonneServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Controller/PersonneServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/DAOImp/EntrepriseDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/DAOImp/EntrepriseDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/DAOImp/PersonneDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/DAOImp/PersonneDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Model/Personne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Model/Personne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Affichage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Affichage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Entreprise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Entreprise.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Personne.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Personne.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/Controller/EntrepriseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/Controller/EntrepriseServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/Controller/PersonneServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/Controller/PersonneServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/DAOImp/EntrepriseDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/DAOImp/EntrepriseDaoImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/DAOImp/PersonneDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gestion/gestionBancaire/DAOImp/PersonneDaoImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/Affichage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/Affichage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/Entreprise.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/Entreprise.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/Personne.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/Personne.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/Controller/EntrepriseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/Controller/EntrepriseServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/Controller/PersonneServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/Controller/PersonneServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/DAOImp/EntrepriseDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/DAOImp/EntrepriseDaoImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/DAOImp/PersonneDaoImp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/WEB-INF/classes/com/gestion/gestionBancaire/DAOImp/PersonneDaoImp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/gestionBancaire-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +50,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Controller/PersonneServlet.java" root0="SKIP_INSPECTION" />
   </component>
@@ -33,6 +62,9 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1oFPmpcz0uw07Szxbz5N0UfIedh" />
   <component name="ProjectViewState">
@@ -44,9 +76,10 @@
     <property name="DatabaseDriversLRU" value="mysql&#10;postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/OneDrive/Bureau/GestionBancaire/GestionBancaire" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GestionBancaire" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -95,6 +128,17 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,13 +255,48 @@
       <workItem from="1613661975304" duration="14935000" />
       <workItem from="1613722606093" duration="28168000" />
       <workItem from="1613821765614" duration="11914000" />
-      <workItem from="1613993136377" duration="11047000" />
-      <workItem from="1614071745614" duration="1295000" />
+      <workItem from="1614073115962" duration="519000" />
+      <workItem from="1614075653981" duration="160000" />
+      <workItem from="1614083487824" duration="15110000" />
+      <workItem from="1614178697558" duration="7529000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/DAOImp/EntrepriseDaoImp.java</url>
+          <line>100</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Controller/EntrepriseServlet.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gestion/gestionBancaire/Controller/EntrepriseServlet.java</url>
+          <line>76</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

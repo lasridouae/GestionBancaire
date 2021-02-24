@@ -3,7 +3,7 @@ package com.gestion.gestionBancaire.Controller;
 import com.gestion.gestionBancaire.DAO.EntrepriseDao;
 import com.gestion.gestionBancaire.DAOImp.EntrepriseDaoImp;
 import com.gestion.gestionBancaire.Model.Entreprise;
-import com.gestion.gestionBancaire.Model.Personne;
+
 
 
 import javax.servlet.*;
@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("//")
+@WebServlet(name="EntrepriseServlet",value ="/EntrepriseServlet")
 public class EntrepriseServlet extends HttpServlet {
-    private EntrepriseDao entrepriseDao = new EntrepriseDaoImp();
+    private final EntrepriseDao entrepriseDaoImp = new EntrepriseDaoImp();
 
 
     @Override
@@ -26,11 +26,9 @@ public class EntrepriseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getServletPath();
+        System.out.println(action);
         try {
         switch (action) {
-            case "/new":
-                showNewForm(request, response);
-                break;
             case "/insert":
                 insert(request, response);
                 break;
@@ -52,11 +50,12 @@ public class EntrepriseServlet extends HttpServlet {
     }
 }
 
-    private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
+    private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException, ServletException {
         int id_user = Integer.parseInt(request.getParameter("id"));
         Entreprise entreprise = new Entreprise(id_user);
-        entrepriseDao.delete(entreprise) ;
-        response.sendRedirect("entrepriseAffich.jsp");
+        entrepriseDaoImp.delete(entreprise);
+       request.getRequestDispatcher("entrepriseAffich.jsp").forward(request,response);
+       // response.sendRedirect("entrepriseAffich.jsp");
     }
 
     private void update(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
@@ -65,7 +64,7 @@ public class EntrepriseServlet extends HttpServlet {
         long n_compte = Long.parseLong(request.getParameter("n_compte"));
         double solde = Double.parseDouble(request.getParameter("solde"));
         Entreprise entreprise = new Entreprise(id_user,nom,solde,n_compte);
-        entrepriseDao.update(entreprise) ;
+        entrepriseDaoImp.update(entreprise) ;
         response.sendRedirect("entrepriseAffich.jsp");
     }
 
@@ -75,14 +74,14 @@ public class EntrepriseServlet extends HttpServlet {
         long n_compte = Long.parseLong(request.getParameter("n_compte"));
         System.out.println(nom);
         Entreprise entreprise = new Entreprise(nom,solde,n_compte);
-        entrepriseDao.insert(entreprise);
-        response.sendRedirect("entrepriseAffich.jsp");
+        entrepriseDaoImp.insert(entreprise);
+        response.sendRedirect("EntrepriseServlet");
     }
 
     private void listCompanies(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
-        List<Entreprise> listCompanies = entrepriseDao.listAllCompanies();
+        List<Entreprise> listCompanies = entrepriseDaoImp.listAllCompanies();
         request.setAttribute("listCompanies", listCompanies);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("list");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("entrepriseAffich.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -90,21 +89,12 @@ public class EntrepriseServlet extends HttpServlet {
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id_user = Integer.parseInt(request.getParameter("id"));
-        Entreprise existingClients = entrepriseDao.getClient(id_user);
+        Entreprise existingClients = entrepriseDaoImp.getClient(id_user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("Entreprise.jsp");
         request.setAttribute("entreprise", existingClients);
         dispatcher.forward(request, response);
     }
 
 
-
-    private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Entreprise.jsp");
-        dispatcher.forward(request, response);
-    }
-
-
 }
-
-
 
