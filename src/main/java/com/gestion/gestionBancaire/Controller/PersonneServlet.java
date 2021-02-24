@@ -14,6 +14,7 @@ import java.util.List;
 
 @WebServlet("/")
 public class PersonneServlet extends HttpServlet {
+
     private PersonneDao personneDaoImp = new PersonneDaoImp();
 
     @Override
@@ -31,6 +32,7 @@ public class PersonneServlet extends HttpServlet {
                     break;
                 case "/ajouter":
                     ajouter(request, response);
+                    System.out.println("Bien ajouter !");
                     break;
                 case "/supprimer":
                     supprimer(request, response);
@@ -40,6 +42,7 @@ public class PersonneServlet extends HttpServlet {
                     break;
                 case "/modifier":
                     modifier(request, response);
+                    System.out.println("Bien modifier !");
                     break;
                 default:
                     listClients(request, response);
@@ -61,7 +64,7 @@ public class PersonneServlet extends HttpServlet {
     private void listClients(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         List<Personne> listClient = personneDaoImp.listAllClients();
         request.setAttribute("listClient", listClient);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("Affichage.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list");
         dispatcher.forward(request, response);
     }
 
@@ -74,7 +77,7 @@ public class PersonneServlet extends HttpServlet {
         double solde = Double.parseDouble(request.getParameter("solde"));
         Personne personne = new Personne(id_user,nom,prenom,solde,n_compte);
         personneDaoImp.modifier(personne);
-        response.sendRedirect("Affichage.jsp");
+        response.sendRedirect("list");
 
 
     }
@@ -83,7 +86,7 @@ public class PersonneServlet extends HttpServlet {
         int id_user = Integer.parseInt(request.getParameter("id"));
         Personne personne = new Personne(id_user);
         personneDaoImp.supprimer(personne);
-        response.sendRedirect("Affichage.jsp");
+        response.sendRedirect("list");
     }
 
 
@@ -96,7 +99,7 @@ public class PersonneServlet extends HttpServlet {
         System.out.println(prenom);
         Personne personne = new Personne(nom,prenom,solde,n_compte);
         personneDaoImp.ajouter(personne);
-        response.sendRedirect("Affichage.jsp");
+        response.sendRedirect("list");
 
     }
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)

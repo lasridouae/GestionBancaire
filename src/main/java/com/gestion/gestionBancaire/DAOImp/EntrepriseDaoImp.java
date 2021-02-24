@@ -70,17 +70,16 @@ public class EntrepriseDaoImp  implements EntrepriseDao {
     }
 
 
-
-
     @Override
     public boolean update(Entreprise entreprise) throws SQLException {
         Connection conn = null;
-        String requete = "UPDATE public.entreprise SET id=?, nom=?, solde=?, n_compte=?";
+        String requete = "UPDATE public.entreprise SET nom=?, solde=?, n_compte=? WHERE id=?";
         PreparedStatement stmt = Objects.requireNonNull(GetConnection.connect()).prepareStatement(requete);
-        stmt.setInt(1, entreprise.getId_user());
-        stmt.setString(2, entreprise.getNom());
-        stmt.setDouble(3, entreprise.getSolde());
-        stmt.setLong(4, entreprise.getN_compte());
+
+        stmt.setString(1, entreprise.getNom());
+        stmt.setDouble(2, entreprise.getSolde());
+        stmt.setLong(3, entreprise.getN_compte());
+        stmt.setInt(4, entreprise.getId_user());
         boolean rowUpdated = stmt.executeUpdate() > 0;
         stmt.close();
         return rowUpdated;

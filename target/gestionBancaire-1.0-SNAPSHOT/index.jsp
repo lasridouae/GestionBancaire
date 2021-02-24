@@ -31,9 +31,7 @@
         <a href="" class="navbar-brand"> Gestion Bancaire </a>
     </div>
     <ul class="navbar-nav">
-
         <li><a href="<a href="<%=request.getContextPath()%>/list" class="nav-link">Personne</a></li>
-        <li><a href="<a href="<%=request.getContextPath()%>/entrepriseAffich.jsp" class="nav-link">Entreprise</a></li>
         <li><a href="Entreprise.jsp" class="nav-link">Add Entreprise</a></li>
         <li><a href="Personne.jsp"  class="nav-link">Add Personne</a></li>
     </ul>

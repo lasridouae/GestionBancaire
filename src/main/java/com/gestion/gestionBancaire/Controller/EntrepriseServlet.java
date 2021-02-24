@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/EntrepriseServlet")
+@WebServlet("//")
 public class EntrepriseServlet extends HttpServlet {
     private EntrepriseDao entrepriseDao = new EntrepriseDaoImp();
 
@@ -82,7 +82,7 @@ public class EntrepriseServlet extends HttpServlet {
     private void listCompanies(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         List<Entreprise> listCompanies = entrepriseDao.listAllCompanies();
         request.setAttribute("listCompanies", listCompanies);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("entrepriseAffich.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("list");
         dispatcher.forward(request, response);
     }
 

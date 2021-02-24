@@ -69,13 +69,13 @@ public class PersonneDaoImp  implements PersonneDao {
     @Override
     public boolean modifier(Personne personne) throws SQLException {
         Connection conn = null;
-            String requete = "UPDATE public.client SET id=?, nom=?, solde=?, n_compte=?, prenom=?";
+            String requete = "UPDATE public.client SET nom=?, solde=?, n_compte=?, prenom=? WHERE  id=?";
             PreparedStatement stmt = Objects.requireNonNull(GetConnection.connect()).prepareStatement(requete);
-            stmt.setInt(1, personne.getId_user());
-            stmt.setString(2, personne.getNom());
-            stmt.setString(3, personne.getPrenom());
-            stmt.setDouble(4, personne.getSolde());
-            stmt.setLong(5, personne.getN_compte());
+            stmt.setString(1, personne.getNom());
+            stmt.setString(2, personne.getPrenom());
+            stmt.setDouble(3, personne.getSolde());
+            stmt.setLong(4, personne.getN_compte());
+            stmt.setInt(5, personne.getId_user());
             boolean rowUpdated = stmt.executeUpdate() > 0;
             stmt.close();
             return rowUpdated;

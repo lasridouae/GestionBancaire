@@ -23,7 +23,8 @@
         </div>
 
         <ul class="navbar-nav">
-            <li><a href="<a href="<%=request.getContextPath()%>/list" class="nav-link">Clients</a></li>
+            <li><a href="<a href="<%=request.getContextPath()%>/list" class="nav-link">Personne</a></li>
+            <li><a href="<a href="<%=request.getContextPath()%>//list" class="nav-link">Personne</a></li>
             <li><a href="Personne.jsp"  class="nav-link">Add Personne</a></li>
         </ul>
     </nav>
